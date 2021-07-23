@@ -1,0 +1,16 @@
+//
+//	COLORS
+// ------------------------------------------------------
+
+@each $page, $color in $page-colors {
+
+	.#{$page} {
+		main {
+			background: $color;
+			border-top: 1px solid darken( $color, 20% );
+		}
+		.shadow { text-shadow: -1px 1px 0px darken( $color, 17% ); }
+		.active a {	color: darken( $color, 25% ); }
+	}
+
+}

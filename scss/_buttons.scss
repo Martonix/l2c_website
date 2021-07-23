@@ -1,0 +1,42 @@
+%button {
+	font: {
+		size: em(17);
+		family: $font-family-sans;
+	}
+
+	color: $color-text;
+	border: none;
+	cursor: pointer;
+
+	text-transform: uppercase;
+	display: inline-block;
+
+	margin: em(34, 17) 0;
+	padding: em(20, 17) em(24, 17);
+
+	@include rounded;
+}
+
+
+@each $btn, $color in $button-colors {
+
+	.btn-#{$btn} {
+		@extend %button;
+		background-color: rgba($color, 1);
+
+		&:hover, &:focus {
+			background-color: rgba($color, 0.85);
+		}
+
+		@if ( $btn == 'white' ) {
+			color: $color-bg-body;
+		}
+		@else {
+			text-shadow: 1px 1px 0 darken($color, 15%);
+		}
+
+	}
+
+}
+
+
